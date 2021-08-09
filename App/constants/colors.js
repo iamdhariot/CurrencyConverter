@@ -7,4 +7,5 @@ export default {
   border: '#e2e2e2',
   blue: '#4f6d7a',
   textLight: '#797979',
+  offWhite: '#F0F0F0',
 };

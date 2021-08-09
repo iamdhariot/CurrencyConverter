@@ -8,26 +8,19 @@ import {
 } from 'react-native';
 import colors from '../constants/colors';
 
-export const ConversionInput = ({
-  text,
-  onButtonPress,
-  //   value,
-  //   onChangeText,
-  //   keyboardType,
-  ...props
-}) => {
+export const ConversionInput = ({text, onButtonPress, ...props}) => {
+  const containerStyles = [styles.container];
+
+  if (props.editable === false) {
+    containerStyles.push(styles.containerDisabled);
+  }
+
   return (
-    <View style={styles.container}>
+    <View style={containerStyles}>
       <TouchableOpacity style={styles.button} onPress={onButtonPress}>
         <Text style={styles.buttonText}>{text}</Text>
       </TouchableOpacity>
-      <TextInput
-        style={styles.input}
-        // value={value}
-        // onChangeText={onChangeText}
-        // keyboardType={keyboardType}
-        {...props}
-      />
+      <TextInput style={styles.input} {...props} />
     </View>
   );
 };
@@ -40,19 +33,26 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderRadius: 5,
   },
+  containerDisabled: {
+    backgroundColor: colors.offWhite,
+  },
   button: {
     padding: 15,
     borderRightColor: colors.border,
     borderRightWidth: 1,
+    backgroundColor: colors.white,
+    borderTopLeftRadius: 5,
+    borderBottomLeftRadius: 5,
   },
   buttonText: {
     fontSize: 18,
-    fontWeight: 'bold',
     color: colors.blue,
+    fontWeight: 'bold',
   },
   input: {
-    padding: 10,
     flex: 1,
+    padding: 10,
+    fontSize: 16,
     color: colors.textLight,
   },
 });
