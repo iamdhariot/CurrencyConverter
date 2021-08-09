@@ -5,5 +5,6 @@ export default {
   secondary: '#728c00',
   text: '#343434',
   border: '#e2e2e2',
-  blue: '#4f7d7a',
+  blue: '#4f6d7a',
+  textLight: '#797979',
 };

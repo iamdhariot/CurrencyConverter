@@ -24,7 +24,7 @@ export default () => {
       <ScrollView>
         <RowItem
           text="Themes"
-          onPress={() => openLink('xxx')}
+          onPress={() => openLink('+91958712121')}
           rightIcon={
             <Entypo name="chevron-right" size={20} color={colors.blue} />
           }
@@ -42,7 +42,8 @@ export default () => {
         <RowSeparator />
         <RowItem
           text="React native by example"
-          onPress={() => alert('todo!')}
+          o
+          onPress={() => openLink('https://reactnativebyexample.com')}
           rightIcon={<Entypo name="export" size={20} color={colors.blue} />}
         />
       </ScrollView>
