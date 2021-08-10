@@ -7,7 +7,11 @@ import {
   Dimensions,
   Text,
   ScrollView,
+  TouchableOpacity,
 } from 'react-native';
+
+import Entypo from 'react-native-vector-icons/Entypo';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import {format} from 'date-fns';
 import {ConversionInput} from '../components/ConversionInput';
 import {Button} from '../components/Button';
@@ -15,7 +19,7 @@ import {KeyboardSpacer} from '../components/KeyboardSpacer';
 import colors from '../constants/colors';
 
 const screen = Dimensions.get('window');
-export default () => {
+export default ({navigation}) => {
   const baseCurrency = 'USD';
   const quoteCurrency = 'GBP';
   const conversionRate = 0.72;
@@ -31,6 +35,11 @@ export default () => {
           backgroundColor={colors.blue}
           translucent={false}
         />
+        <SafeAreaView style={styles.header}>
+          <TouchableOpacity onPress={() => navigation.push('Options')}>
+            <Entypo name="cog" size={32} color={colors.white} />
+          </TouchableOpacity>
+        </SafeAreaView>
         <View style={styles.content}>
           <View style={styles.logoContainer}>
             <Image
@@ -80,7 +89,7 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
   },
   content: {
-    paddingTop: screen.height * 0.2,
+    paddingTop: screen.height * 0.1,
   },
   logoContainer: {
     justifyContent: 'center',
@@ -106,5 +115,9 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontSize: 14,
     textAlign: 'center',
+  },
+  header: {
+    alignItems: 'flex-end',
+    marginHorizontal: 20,
   },
 });

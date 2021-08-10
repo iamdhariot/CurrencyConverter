@@ -5,6 +5,7 @@ import {
   ScrollView,
   Linking,
   Alert,
+  StatusBar,
 } from 'react-native';
 import colors from '../constants/colors';
 
@@ -21,6 +22,11 @@ const openLink = url => {
 export default () => {
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor={colors.white}
+        translucent={false}
+      />
       <ScrollView>
         <RowItem
           text="Themes"
@@ -42,7 +48,6 @@ export default () => {
         <RowSeparator />
         <RowItem
           text="React native by example"
-          o
           onPress={() => openLink('https://reactnativebyexample.com')}
           rightIcon={<Entypo name="export" size={20} color={colors.blue} />}
         />
