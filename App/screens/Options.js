@@ -22,11 +22,7 @@ const openLink = url => {
 export default () => {
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar
-        barStyle="dark-content"
-        backgroundColor={colors.white}
-        translucent={false}
-      />
+      <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
       <ScrollView>
         <RowItem
           text="Themes"
