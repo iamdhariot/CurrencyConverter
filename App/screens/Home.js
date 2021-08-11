@@ -58,7 +58,10 @@ export default ({navigation}) => {
             text={baseCurrency}
             value="123"
             onButtonPress={() =>
-              navigation.push('CurrencyList', {title: 'Base Currency'})
+              navigation.push('CurrencyList', {
+                title: 'Base Currency',
+                activeCurrency: baseCurrency,
+              })
             }
             onChangeText={text => console.log('Text', text)}
             keyboardType="numeric"
@@ -68,7 +71,10 @@ export default ({navigation}) => {
             value="123"
             editable={false}
             onButtonPress={() =>
-              navigation.push('CurrencyList', {title: 'Quote Currency'})
+              navigation.push('CurrencyList', {
+                title: 'Quote Currency',
+                activeCurrency: quoteCurrency,
+              })
             }
           />
           <Text style={styles.text}>
